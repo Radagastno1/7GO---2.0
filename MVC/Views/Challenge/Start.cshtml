@@ -1,0 +1,29 @@
+@model CORE.Entities.Challenge
+@{
+    ViewData["Title"] = "Start!";
+}
+
+<body>
+    <header>
+
+        <div>
+            <h1>7-GO</h1>
+        </div>
+
+        <div>
+            <a href="">Logga ut</a>
+            <a href="">Om 7-GO</a>
+        </div>
+
+    </header>
+
+    <main>
+
+        <h2>Upplåsta utmaningar i 7-härad</h2>
+        <h3>@Model.challenge_name</h3>
+        <h3>@Model.description</h3>
+
+    </main>
+
+
+</body>

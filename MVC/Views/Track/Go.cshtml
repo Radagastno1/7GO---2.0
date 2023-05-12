@@ -1,0 +1,87 @@
+@model CORE.Entities.Track //gör trackviewmodel
+
+@{
+    ViewData["Title"] = "Spår - " + Model.track_name;
+}
+
+<body>
+    <header>
+        <div>
+            <h1>7-GO</h1>
+        </div>
+        <div>
+            <a href="/logout">Logga ut</a>
+            <a href="/about">Om 7-GO</a>
+        </div>
+    </header>
+
+<main>
+    <h2>Min karta</h2>
+    <div id="map-container">
+        <iframe
+            width="600"
+            height="450"
+            frameborder="0"
+            style="border:0"
+            @* src=@($"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14694.170905708124!2d{Model.longitude}!3d{Model.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1621504857561!5m2!1sen!2sus") *@
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2383.529163644095!2d12.9786216!3d57.7079477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46500a77d54b6e11%3A0xb283d6c607480316!2sKransmossens%20friluftsg%C3%A5rd!5e0!3m2!1sen!2sus!4v1621504857561!5m2!1sen!2sus"
+            allowfullscreen
+        ></iframe>
+    </div>
+
+    <script>
+    function sendPostRequest(latitude, longitude) {
+        var data = {
+            latitude: latitude,
+            longitude: longitude
+        };
+
+        fetch('/your-post-endpoint', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('POST request successfully sent!');
+                // Hantera framgångsfall, exempelvis uppdatera användargränssnittet
+            } else {
+                console.log('Error sending POST request');
+                // Hantera fel, exempelvis visa felmeddelande
+            }
+        })
+        .catch(error => {
+            console.log('Error sending POST request:', error);
+        });
+    }
+
+    function checkUserLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                // Jämför med önskad latitude och longitude och skicka POST-förfrågan om matchning
+                if (latitude === desiredLatitude && longitude === desiredLongitude) {
+                    sendPostRequest(latitude, longitude);
+                }
+            });
+        } else {
+            console.log('Geolocation is not supported by this browser.');
+        }
+    }
+
+    // Kör funktionen när sidan laddas
+    checkUserLocation();
+</script>
+
+
+</main>
+
+<footer>
+
+</footer>
+
+</body>

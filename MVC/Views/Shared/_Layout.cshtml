@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - 7H-GO</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 780px)">
+    <link rel="stylesheet" href="/css/tablet.css" media="screen and (max-width: 460px)">
+</head>
+<body>
+
+    <main>
+           @RenderBody()
+    </main>
+
+    <footer>
+        <div class="info-div">
+            <div class="info">
+                <a href="#">Om oss</a>
+                <a href="#">Annonsera</a>
+                <a href="#">Företaget</a>
+                <a href="#">Belöningar</a>
+            </div>
+
+            <div class="KommunVapen">
+                <img class="Leaf" src="Assets/Ullsaxen.png" alt="KommunVapen" height="12" width="14">
+                <a href="https://www.boras.se/">Miljö staden Borås</a>
+            </div>
+
+            <div class="info">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Settings</a>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+</html>
+

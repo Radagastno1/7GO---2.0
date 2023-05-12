@@ -1,0 +1,29 @@
+@model CORE.Entities.Challenge //gör challengeViewModel
+@{
+    ViewData["Title"] = "Utmaningar";
+}
+<body>
+    <header>
+    
+    <div>
+        <h1>7-GO</h1>
+    </div>
+
+    <div>
+        <a href="">Logga ut</a>
+        <a href="">Om 7-GO</a>
+    </div>
+
+</header>
+
+<main>
+    här skriv info om aktuella utmaningen
+   <h2>@Model.challenge_name</h2>
+   <h3>@Model.track.track_name</h3>
+</main>
+
+<footer>
+
+</footer>
+
+</body>

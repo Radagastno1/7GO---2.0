@@ -1,0 +1,42 @@
+@model MVC.Models.UserViewModel //gör viewmodels, typ userViewModel.AvailableChallenges
+@{
+    ViewData["Title"] = "Utmaningar";
+}
+
+<body>
+    <header>
+
+        <div>
+            <h1>7-GO</h1>
+        </div>
+
+        <div>
+            <a href="">Logga ut</a>
+            <a href="">Om 7-GO</a>
+        </div>
+
+    </header>
+
+    <main>
+
+        <h2>Upplåsta utmaningar i 7-härad</h2>
+        <ul>
+            @foreach (var challenge in Model.AvailableChallenges)
+            {
+                <li>
+                    <h3>Level: @challenge.challenge_level</h3>
+                    <h3>@challenge.challenge_name</h3>
+                    <form method="post" action="/Track/Go">
+                        <input type="hidden" name="challengeId" value="@challenge.challengeId" />
+                        <button class="go" type="submit">Go!</button>
+                    </form>
+                </li>
+            }
+        </ul>
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>

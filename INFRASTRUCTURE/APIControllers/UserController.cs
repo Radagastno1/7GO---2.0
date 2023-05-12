@@ -41,18 +41,18 @@ namespace INFRASTRUCTURE.APIControllers
             return Ok();
         }
 
-        [HttpGet]
-        public async Task<ActionResult<List<User>>> GetUserTop10()
-        {
-            var user = await this._service.Get().ToList();
+        // [HttpGet]
+        // public async Task<ActionResult<List<User>>> GetUsers()
+        // {
+        //     var user = await this._service.Get().ToList();
 
-            if (User == null)
-            {
-                return NotFound();
-            }
+        //     if (User == null)
+        //     {
+        //         return NotFound();
+        //     }
 
-            return Ok(user.TakeLast(10));
-        }
+        //     return Ok(user);
+        // }
 
         [HttpPut]
         public async Task<ActionResult<User>> UpdateUser([FromBody] User user)
@@ -67,7 +67,7 @@ namespace INFRASTRUCTURE.APIControllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<User>> DeleteUser(int userId)
+        public async Task<ActionResult<User>> DeleteUser(User user)
         {
             var deleteUser = await this._service.Delete(userId);
             if (deleteUser == null)

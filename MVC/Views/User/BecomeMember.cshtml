@@ -1,0 +1,25 @@
+@model UserViewModel
+
+@{
+    ViewData["Title"] = "Bli medlem!";
+}
+<header>
+    
+</header>
+
+<div class="text-container">
+
+@using (Html.BeginForm("PostMember", "User", FormMethod.Post))
+{
+    <h4>Namn: </h4> <input type="text" name=""
+        value="@Model.Name">
+    <h4>Telefonnummer: </h4> <input type="number" name="PhoneNumber"
+        value="@Model.PhoneNumber">
+    <h4>Email: </h4> <input type="email" name="Email"
+        value="@Model.Email">
+
+    @* <input type="hidden" name="ReservationViewModel.MovieScreeningId"
+        value="@Model.ReservationViewModel.MovieScreeningId" /> *@
+
+    <button type="submit" id="button">Kom igång!</button>
+}

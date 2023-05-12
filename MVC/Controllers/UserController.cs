@@ -36,4 +36,19 @@ public class UserController : Controller
 
         return RedirectToAction("Index", "Challenge", userViewModel);
     }
+    public async Task<IActionResult> BecomeMember()
+    {
+        var userViewModel = new UserViewModel();
+        return View(userViewModel);
+    }
+    public async Task<IActionResult> PostMember(UserViewModel userViewModel)
+    {
+        var user = new CORE.Entities.User()
+        {
+            user_name = userViewModel.Name
+        };
+        var loggedInUser = await _userService.add(user); //här får vi vilka utmaningear som personen har gjort och ej
+
+        return RedirectToAction("Index", "Challenge", userViewModel);
+    }
 }

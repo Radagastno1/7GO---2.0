@@ -3,9 +3,9 @@ using CORE.Interfaces;
 
 namespace INFRASTRUCTURE.Repositories;
 
-public class UserRepository : IRepository<CORE.Entities.User>
+public class RewardRepository : IRepository<CORE.Entities.Reward>
 {
-    public async Task<User> Create(User obj)
+    public async Task<Reward> Create(Reward obj)
     {
         throw new NotImplementedException();
     }
@@ -15,22 +15,22 @@ public class UserRepository : IRepository<CORE.Entities.User>
         throw new NotImplementedException();
     }
 
-    public async Task<List<User>> Get()
+    public async Task<List<Reward>> Get()
     {
         throw new NotImplementedException();
     }
 
-    public async Task<User> GetById(int id)
+    public async Task<Reward> GetById(int id)
     {
         throw new NotImplementedException();
     }
 
-    public async Task<User> Update(User obj)
+    public async Task<Reward> Update(Reward obj)
     {
         throw new NotImplementedException();
     }
 
-    Task IRepository<User>.Delete(User obj)
+    public async Task Delete(Reward obj)
     {
         throw new NotImplementedException();
     }

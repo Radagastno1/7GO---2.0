@@ -42,7 +42,11 @@ namespace INFRASTRUCTURE.APIControllers
         }
 
         // [HttpGet]
+<<<<<<< HEAD
         // public async Task<ActionResult<List<User>>> GetUsers()
+=======
+        // public async Task<ActionResult<List<User>>> GetUserTop10()
+>>>>>>> 66cd00cec8b5455db45ca3cdf7fd351ad2299188
         // {
         //     var user = await this._service.Get().ToList();
 
@@ -51,7 +55,11 @@ namespace INFRASTRUCTURE.APIControllers
         //         return NotFound();
         //     }
 
+<<<<<<< HEAD
         //     return Ok(user);
+=======
+        //     return Ok(user.TakeLast(10));
+>>>>>>> 66cd00cec8b5455db45ca3cdf7fd351ad2299188
         // }
 
         [HttpPut]
@@ -66,6 +74,7 @@ namespace INFRASTRUCTURE.APIControllers
             return Ok();
         }
 
+<<<<<<< HEAD
         [HttpDelete]
         public async Task<ActionResult<User>> DeleteUser(User user)
         {
@@ -74,8 +83,18 @@ namespace INFRASTRUCTURE.APIControllers
             {
                 return NoContent();
             }
+=======
+        // [HttpDelete]
+        // public async Task<ActionResult<User>> DeleteUser(int userId)
+        // {
+        //     var deleteUser = await this._service.Delete(userId);
+        //     if (deleteUser == null)
+        //     {
+        //         return NoContent();
+        //     }
+>>>>>>> 66cd00cec8b5455db45ca3cdf7fd351ad2299188
 
-            return Ok();
-        }
+        //     return Ok();
+        // }
     }
 }

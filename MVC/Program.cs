@@ -24,6 +24,11 @@ builder.Services.AddScoped<
     CORE.Interfaces.IRepository<CORE.Entities.Track>,
     INFRASTRUCTURE.Repositories.TrackRepository
 >();
+builder.Services.AddScoped<
+    CORE.Interfaces.IRepository<CORE.Entities.Reward>,
+    INFRASTRUCTURE.Repositories.RewardRepository
+>();
+
 
 builder.Services.AddScoped<
     CORE.Interfaces.Iservice<CORE.Entities.User>,

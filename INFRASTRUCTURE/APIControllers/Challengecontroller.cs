@@ -46,20 +46,20 @@ namespace INFRASTRUCTURE.APIControllers
             return Ok();
         }
 
-        [HttpPost]
-        [ProducesResponseType(statusCode: 200)]
-        [ProducesResponseType(statusCode: 400)]
-        public async Task<ActionResult<User>> UserChallenge([FromBody] User user)
-        {
-            var userChallenge = await this._service.add(user);
+        // [HttpPost]
+        // [ProducesResponseType(statusCode: 200)]
+        // [ProducesResponseType(statusCode: 400)]
+        // public async Task<ActionResult<User>> UserChallenge(CORE.Entities.User user)
+        // {
+        //     var userChallenge = await this._service.add(user);
 
-            if (userChallenge == null)
-            {
-                return BadRequest();
-            }
+        //     if (userChallenge == null)
+        //     {
+        //         return BadRequest();
+        //     }
 
-            return Ok();
-        }
+        //     return Ok();
+        // }
 
         [HttpGet]
         [ProducesResponseType(statusCode: 200)]

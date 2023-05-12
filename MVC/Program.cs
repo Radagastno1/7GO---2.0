@@ -25,6 +25,7 @@ builder.Services.AddScoped<
     INFRASTRUCTURE.Repositories.TrackRepository
 >();
 
+
 builder.Services.AddScoped<
     CORE.Interfaces.Iservice<CORE.Entities.User>,
     CORE.Services.UserService

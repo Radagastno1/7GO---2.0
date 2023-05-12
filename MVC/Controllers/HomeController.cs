@@ -13,11 +13,11 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
         return View();
     }
-     public IActionResult Login()
+     public async Task<IActionResult> Login()
     {
         var userViewModel = new UserViewModel();
         return View(userViewModel);
